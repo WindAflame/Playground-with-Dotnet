@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace FranceTravail.Models.FranceTravailAPI
 {
@@ -12,9 +8,21 @@ namespace FranceTravail.Models.FranceTravailAPI
     /// </summary>
     public class City
     {
+        [JsonPropertyName("code")]
         public string Code { get; set; }
+
+        [JsonPropertyName("libelle")]
         public string Libelle { get; set; }
+
+        [JsonPropertyName("codePostal")]
         public string CodePostal { get; set; }
+
+        [JsonPropertyName("codeDepartement")]
         public string CodeDepartement { get; set; }
+
+        public override string ToString()
+        {
+            return $"Code: {Code}, Libelle: {Libelle}, CodePostal: {CodePostal}, CodeDepartement: {CodeDepartement}";
+        }
     }
 }
